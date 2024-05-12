@@ -38,6 +38,7 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   try {
     await dbConnect();
+    
     const blog = await BlogModel.find();
     return Response.json({ blog });
   } catch (err) {
